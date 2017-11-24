@@ -736,7 +736,7 @@ namespace CKAN
                 }
 
                 // We don't allow for the overwriting of files. See #208.
-                if (File.Exists(fullPath))
+                if (File.Exists(fullPath) && !fullPath.Contains("Ships"))
                 {
                     throw new FileExistsKraken(fullPath, string.Format("Trying to write {0} but it already exists.", fullPath));
                 }
